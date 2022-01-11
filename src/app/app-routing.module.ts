@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'otp-screen',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'otp-screen',
+    loadChildren: () => import('./otp-screen/otp-screen.module').then( m => m.OtpScreenPageModule)
   },
 ];
 
